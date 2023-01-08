@@ -8,13 +8,14 @@ const Header = () => {
 				<div className='header-top-links'>
 					<Link to='/account'>Account: Guest</Link>
 					<Link to='/cart'>Your Cart (0)</Link>
+					<Link to='/login'>Login/Register</Link>
 				</div>
 			</div>
 			<div className='header-bottom'>
 				<div className='header-logo'>
 					<NavLink to='/' className='header-logo-link'>
 						<h2 className='header-logo-title'>ArnoldStore</h2>
-						<h4 className='header-logo-title'>online store</h4>
+						<h4 className='header-logo-title'>Online Marketplace</h4>
 					</NavLink>
 				</div>
 
