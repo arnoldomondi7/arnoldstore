@@ -5,10 +5,10 @@ import KiddsLattest from './KiddsLattest.comp'
 
 const Lattest = () => {
 	return (
-		<div>
-			<MenLattest />
+		<div className='lattest'>
 			<WomenLattest />
 			<KiddsLattest />
+			<MenLattest />
 		</div>
 	)
 }
