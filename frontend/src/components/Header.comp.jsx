@@ -12,6 +12,7 @@ const Header = () => {
 				</div>
 			</div>
 			<div className='header-bottom'>
+				{/* wrapper */}
 				<div className='header-logo'>
 					<NavLink to='/' className='header-logo-link'>
 						<h2 className='header-logo-title'>ArnoldStore</h2>

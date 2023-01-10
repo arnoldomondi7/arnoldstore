@@ -46,8 +46,8 @@
 }
 
 .header-logo .header-logo-link h4 {
-	text-shadow: 1px 1px #a1a1a1;
 	margin-top: 10px;
+	text-shadow: 1px 1px #a1a1a1;
 }
 
 .header-nav ul {
@@ -606,4 +606,177 @@
 	margin-right: 16px;
 	padding: 80px 40px;
 	border-bottom: 3px dotted #eee;
+}
+
+.socials-top {
+	margin-bottom: 40px;
+}
+.socials-top h2 {
+	font-size: 34px;
+	font-weight: 700;
+	color: #2a2a2a;
+}
+
+.socials-top span {
+	font-size: 14px;
+	font-weight: 400;
+	color: #a1a1a1;
+	font-style: italic;
+}
+
+.socials-bottom-images {
+	display: flex;
+}
+
+.social-bottom-img {
+	position: relative;
+}
+
+.social-bottom-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	padding: 3px;
+}
+
+.socials-hover {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.85);
+	opacity: 0;
+	visibility: 1;
+	transition: all 0.5s;
+}
+
+.socials-hover a {
+	position: absolute;
+	bottom: 40px;
+	left: 15px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.socials-hover svg {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	color: #fff;
+}
+
+.social-bottom-img:hover .socials-hover {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* SUBSCRIBE PAGE. */
+.subscribe {
+	min-height: 100vh;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding: 80px 40px;
+}
+
+.subscribe-div {
+	display: flex;
+	gap: 60px;
+}
+
+.subscribe-left {
+	width: 60%;
+}
+
+.subscribe-right {
+	width: 40%;
+	padding-top: 40px;
+}
+
+.subscribe-title {
+	line-height: 55px;
+	font-size: 34px;
+	font-weight: 700;
+	color: #2a2a2a;
+}
+
+.subscribe-desc {
+	font-size: 14px;
+	font-weight: 400;
+	color: #a1a1a1;
+	font-style: italic;
+}
+
+.subscribe-left form {
+	margin-top: 30px;
+}
+
+.subscribe-form-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.subscribe-form-group input {
+	width: 315px;
+	height: 44px;
+	line-height: 44px;
+	padding: 0px 15px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 500;
+	color: #aaa;
+	border-radius: 0px;
+	border: 1px solid #7a7a7a;
+	box-shadow: none;
+}
+
+.subscribe-form-group input:focus {
+	outline-color: #ffc107;
+}
+
+.subscribe-form-group button {
+	width: 44px;
+	height: 44px;
+	display: inline-block;
+	text-align: center;
+	background-color: #2a2a2a;
+	box-shadow: none;
+	color: #fff;
+	transition: all 0.5s;
+}
+
+.subscribe-form-group button:hover {
+	background-color: #fff;
+	color: #2a2a2a;
+	border: 1px solid #2a2a2a;
+}
+
+.subscribe-right {
+	display: flex;
+}
+
+.subscribe-right-left,
+.subscribe-right-right {
+	flex: 1;
+}
+
+.subscribe-right-left div,
+.subscribe-right-right div {
+	margin-bottom: 30px;
+}
+.subscribe-right-left div h4,
+.subscribe-right-right div h4 {
+	font-size: 16px;
+	font-weight: 700;
+	color: #2a2a2a;
+}
+
+.subscribe-right-left div span,
+.subscribe-right-right div span {
+	font-size: 14px;
+	font-weight: 400;
+	color: #aaa;
 }
