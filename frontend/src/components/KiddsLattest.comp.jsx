@@ -12,7 +12,7 @@ const KiddsLattest = () => {
 		slidesToScroll: 1,
 	}
 	return (
-		<div className='lattest-container'>
+		<div className='lattest-container' id='kids'>
 			<div className='lattest-div'>
 				<div className='lattest-texts'>
 					<h3 className='lattest-title'>Kid's Lattest Fits'</h3>

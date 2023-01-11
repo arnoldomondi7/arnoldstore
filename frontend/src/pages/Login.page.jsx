@@ -1,4 +1,6 @@
 import React from 'react'
+import { BsFillUnlockFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 	return (
@@ -11,7 +13,12 @@ const Login = () => {
 						<input type='password' required placeholder='Enter Password' />
 					</div>
 
-					<button>Login</button>
+					<button>
+						Login <BsFillUnlockFill />
+					</button>
+					<p>
+						New Here ? <Link to='/register'> Register</Link>
+					</p>
 				</form>
 			</div>
 		</div>
