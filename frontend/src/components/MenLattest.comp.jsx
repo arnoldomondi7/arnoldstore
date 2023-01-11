@@ -34,7 +34,7 @@ const MenLattest = () => {
 										/>
 									</div>
 									<div className='slider-img-top-hover'>
-										<Link to='' className='slider-img-link'>
+										<Link to='/product/456' className='slider-img-link'>
 											<FaEye />
 										</Link>
 										<Link to='' className='slider-img-link'>

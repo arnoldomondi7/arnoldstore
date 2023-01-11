@@ -168,7 +168,7 @@ const AboutUs = () => {
 
 				<div className='about-us-images-div'>
 					<div className='about-us-image-div'>
-						<h4>Jane Doe</h4>
+						<h4>Lattest outfits</h4>
 						<span>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
 							laborum vero exercitationem iure, nulla aut quaerat impedit,
@@ -180,7 +180,7 @@ const AboutUs = () => {
 					</div>
 
 					<div className='about-us-image-div'>
-						<h4>Jane Doe</h4>
+						<h4>Affordable Prices</h4>
 						<span>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
 							laborum vero exercitationem iure, nulla aut quaerat impedit,
@@ -188,11 +188,11 @@ const AboutUs = () => {
 							delectus.
 						</span>
 
-						<img src='./assets/uploads/jane-doe.jpg' alt='' />
+						<img src='./assets/uploads/about-us-02.jpg' alt='' />
 					</div>
 
 					<div className='about-us-image-div'>
-						<h4>Jane Doe</h4>
+						<h4>Friendly Customer Support</h4>
 						<span>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
 							laborum vero exercitationem iure, nulla aut quaerat impedit,
@@ -200,7 +200,7 @@ const AboutUs = () => {
 							delectus.
 						</span>
 
-						<img src='./assets/uploads/jane-doe.jpg' alt='' />
+						<img src='./assets/uploads/about-us-03.jpg' alt='' />
 					</div>
 				</div>
 			</div>
