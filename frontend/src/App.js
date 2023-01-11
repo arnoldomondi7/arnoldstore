@@ -6,7 +6,10 @@ import Contact from './pages/Contact.page.jsx'
 import About from './pages/About.page.jsx'
 import Products from './pages/Products.page.jsx'
 import Product from './pages/Product.page.jsx'
+import Login from './pages/Login.page.jsx'
+import Register from './pages/Register.page.jsx'
 import './App.css'
+
 const App = () => {
 	return (
 		<div className='main-wraper'>
@@ -17,6 +20,8 @@ const App = () => {
 					<Route path='/about' element={<About />} />
 					<Route path='/products' element={<Products />} />
 					<Route path='/product/:id' element={<Product />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/register' element={<Register />} />
 				</Routes>
 			</Layout>
 		</div>

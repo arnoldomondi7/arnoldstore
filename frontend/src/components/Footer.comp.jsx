@@ -64,7 +64,7 @@ const Footer = () => {
 			<div className='footer-bottom'>
 				<div className='footer-bottom-copyright'>
 					<p className='footer-bottom-text'>
-						Copyright &copy; ArnoldStore. All Rights Reserved.
+						ArnoldStore. All Rights Reserved. Copyright &copy; 2023
 					</p>
 					<p className='footer-bottom-text'>
 						Designed By:
