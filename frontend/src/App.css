@@ -951,18 +951,14 @@
 	color: #fff;
 }
 
-.about-us-texts span {
+.about-us-texts .about-us {
+	color: #fff;
 	font-size: 16px;
 	font-weight: 500;
 	font-style: italic;
-	color: #fff;
 }
 
-.about-us-texts span:first-child {
-	margin-bottom: 20px;
-	background-color: red;
-}
-
+/* BOTTOM */
 .about-us-bottom {
 	display: flex;
 	gap: 50px;
@@ -989,7 +985,7 @@
 	font-size: 14px;
 	font-weight: 400;
 	font-style: italic;
-	color: #fff;
+	color: #999;
 }
 
 .about-us-bottom-text .explore-quote {
@@ -1623,12 +1619,10 @@
 .cart-items-top-hover {
 	position: absolute;
 	display: flex;
-	gap: 10px;
 	justify-content: center;
 	align-items: center;
 	top: 0;
 	bottom: 0;
-	text-align: center;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
@@ -1772,6 +1766,7 @@
 	border-left: 3px dotted #eee;
 	padding: 0 40px;
 }
+
 .account-title {
 	color: #2a2a2a;
 	text-align: center;
@@ -1794,4 +1789,147 @@
 	color: #a1a1a1;
 	font-weight: 400;
 	font-style: italic;
+}
+
+.account-content-group {
+	margin-bottom: 15px;
+}
+
+.account-light {
+	margin-right: 5px;
+}
+
+.account-bold {
+	font-weight: bold;
+}
+
+.account-content-groups {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.account-content-group-right img {
+	width: 256px;
+	height: 256px;
+	object-fit: cover;
+}
+
+.account-close-text {
+	color: #2a2a2a;
+	font-weight: 700;
+}
+
+.close-button {
+	display: block;
+	border-color: #2a2a2a;
+	color: #2a2a2a;
+	font-size: 13px;
+	padding: 12px 25px;
+	font-weight: 500;
+	transition: all 0.5s;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.close-button:hover {
+	background-color: #2a2a2a;
+	color: #fff;
+	font-weight: 500;
+}
+
+.close-button svg {
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+.update-password {
+	display: block;
+	margin: 0 auto;
+}
+
+.form-sign-div.update-info,
+.form-sign-div.update-image {
+	width: 400px;
+}
+
+.update-image {
+	display: flex;
+	justify-content: center;
+}
+
+.user-image {
+	display: none;
+}
+
+.label-image {
+	font-size: 50px;
+	cursor: pointer;
+}
+
+.orders-id {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	color: #2a2a2a;
+	font-weight: 700;
+	border-bottom: 3px dotted #eee;
+}
+
+.orders-id a {
+	display: flex;
+	justify-content: flex-end;
+	color: #2a2a2a;
+	font-size: 20px;
+}
+
+/* SINGE ORDER  */
+.order {
+	min-height: 100vh;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding: 80px 40px;
+}
+
+.order-title {
+	color: #a1a1a1;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 40px;
+	font-style: italic;
+	font-size: 21px;
+}
+.order-div {
+	display: flex;
+	justify-content: space-evenly;
+}
+.cart-items-top.product.order-product {
+	width: 250px;
+}
+
+.cart-items-top-inner.order-image-div img {
+	width: 100%;
+	height: 250px;
+	object-fit: contain;
+}
+
+.cart-items-top-hover.order-hover {
+	height: 250px;
+}
+
+.order-info-title {
+	margin-bottom: 20px;
+	color: #a1a1a1;
+	font-weight: 500;
+}
+
+.order-text {
+	margin-bottom: 12px;
+	color: #a1a1a1;
+	font-weight: 400;
+}
+
+.order-text span {
+	color: #2a2a2a;
+	font-weight: 700;
 }

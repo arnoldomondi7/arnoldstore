@@ -9,8 +9,9 @@ import Product from './pages/Product.page.jsx'
 import Login from './pages/Login.page.jsx'
 import Register from './pages/Register.page.jsx'
 import Cart from './pages/Cart.page.jsx'
-import './App.css'
 import Account from './pages/Account.page.jsx'
+import Order from './components/Order.comp.jsx'
+import './App.css'
 
 const App = () => {
 	return (
@@ -26,6 +27,7 @@ const App = () => {
 					<Route path='/register' element={<Register />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/account' element={<Account />} />
+					<Route path='/order/:id' element={<Order />} />
 				</Routes>
 			</Layout>
 		</div>

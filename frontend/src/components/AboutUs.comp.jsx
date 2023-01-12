@@ -4,6 +4,7 @@ import {
 	FaInstagram,
 	FaLinkedin,
 	FaQuoteLeft,
+	FaQuoteRight,
 	FaTwitter,
 	FaYoutube,
 } from 'react-icons/fa'
@@ -16,8 +17,8 @@ const AboutUs = () => {
 				<div className='about-us-top'>
 					<img src='./assets/uploads/contact-form.jpg' alt='' />
 					<div className='about-us-texts'>
-						<h2>About Our Store</h2>
-						<span>
+						<h2>Who Is ArnoldStore?</h2>
+						<span className='about-us'>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit?
 						</span>
 					</div>
@@ -31,7 +32,7 @@ const AboutUs = () => {
 					</div>
 					<div className='about-us-bottom-right'>
 						<div className='about-us-bottom-text'>
-							<h2>What Do We Do?.</h2>
+							<h2>What We Do.</h2>
 							<span>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							</span>
@@ -42,11 +43,12 @@ const AboutUs = () => {
 									consectetur adipisicing elit.t amet consectetur adipisicing
 									elit. t amet consectetur adipisicing elit.
 								</p>
+								<FaQuoteRight />
 							</div>
 							<span>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								Excepturi, veritatis dolore, dolor itaque fugit illum facere
-								magni.
+								magni. hhthdue djowjekasd akjdpaefa awwirkas aies.
 							</span>
 						</div>
 						<div className='about-us-bottom-socials'>

@@ -32,7 +32,7 @@ const CartItems = () => {
 									<td>
 										<div className='cart-items-div'>
 											<div className='cart-items-top product'>
-												<div className='cart-items-top-inner'>
+												<div className='cart-items-top-inner '>
 													<img
 														src='./assets/uploads/man-model-2.jpg'
 														alt=''
