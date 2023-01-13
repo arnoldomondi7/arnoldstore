@@ -1,53 +1,21 @@
 import mongoose from 'mongoose'
-const { Schema, model } = mongoose
 
-//create the table for the user.
-const UserSchema = new Schema(
+//create the user table.
+const UserSchema = new mongoose.Schema(
 	{
-		name: {
-			type: String,
-			required: true,
-			max: 50,
-		},
-		email: {
-			type: String,
-			required: true,
-			unique: true,
-		},
-		password: {
-			type: String,
-			required: true,
-			min: [8, 'Password Should be At Least 8 Characters Long'],
-		},
-		country: {
-			type: String,
-			required: true,
-		},
-		city: {
-			type: String,
-			required: true,
-		},
-		address: {
-			type: String,
-			required: true,
-		},
-		phone: {
-			type: String,
-			required: true,
-		},
-		image: {
-			type: String,
-			required: true,
-		},
-		isAdmin: {
-			type: Boolean,
-			default: false,
-			required: true,
-		},
+		name: { type: String, required: true },
+		email: { type: String, required: true, unique: true },
+		password: { type: String, required: true },
+		country: { type: String, required: true },
+		city: { type: String, required: true },
+		address: { type: String, required: true },
+		phone: { type: String, required: true },
+		image: { type: String, required: true },
+		isAdmin: { type: Boolean, required: true, default: false },
 	},
 	{ timestamps: true }
 )
 
-const User = model('User', UserSchema)
+const User = mongoose.model('User', UserSchema)
 
 export default User

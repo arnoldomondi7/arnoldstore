@@ -1,17 +1,15 @@
-import Product from '../models/productModel.js'
+import Product from '../models/productModel'
 
-//create products.
+//create a product function.
 export const createProduct = async (req, res) => {
-	//get the details from the fronend via req.body.
 	const newProduct = new Product(req.body)
 
-	//when dealing with the db, use trycatch
 	try {
-		const savedProduct = await newProduct.save()
+		const saveProduct = await newProduct.save()
 
-		//send the res to the frontend.
-		res.status(201).json(savedProduct)
+		//send res to the user.
+		res.status(200).json(saveProduct)
 	} catch (error) {
-		res.status(400).json(error)
+		res.status(500).json(error)
 	}
 }

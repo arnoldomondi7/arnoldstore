@@ -5,19 +5,29 @@ const verifyToken = async (req, res, next) => {
 	const authHeader = req.headers.token
 
 	if (authHeader) {
-		const token = authHeader.split('')[1]
+		const token = authHeader.split(' ')[1]
+
+		//verify the token.
 		jwt.verify(token, process.env.JWT_SECRET, (error, user) => {
-			if (error) {
-				return res.status(402).json('Invalid Token!!')
-			}
+			//handle error.
+			if (error) res.status(403).json('Invalid Token')
 
 			req.user = user
-
 			next()
 		})
 	} else {
-		return res.status(500).send('You Are Not Authenticated.')
+		return res.status(401).json('You Are Not Authenticated')
 	}
 }
 
-export default verifyToken
+const verifyTokenAndAdmin = (req, res, next) => {
+	verifyToken(req, res, () => {
+		if (req.user.isAdmin) {
+			next()
+		} else {
+			res.status(403).json('Restricted Resource, Admin only.')
+		}
+	})
+}
+
+export default verifyTokenAndAdmin

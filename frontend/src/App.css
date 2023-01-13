@@ -970,7 +970,7 @@
 }
 
 .about-us-bottom-text {
-	border-bottom: 3px dotted #eee;
+	border-bottom: 3px dotted #ddd;
 	padding-bottom: 80px;
 }
 
@@ -979,6 +979,7 @@
 	font-weight: 700;
 	color: #000;
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .about-us-bottom-text span {
@@ -996,6 +997,7 @@
 	display: flex;
 	margin-top: 80px;
 	gap: 20px;
+	width: 100%;
 }
 
 .about-us-bottom-socials a {
@@ -1008,6 +1010,7 @@
 	align-items: center;
 	border-radius: 50%;
 	transition: all 0.5s;
+	margin: 0px 20px;
 }
 
 .about-us-bottom-socials a:hover {
@@ -1047,9 +1050,9 @@
 }
 
 .about-us-images {
-	width: 100%;
 	display: flex;
 	gap: 50px;
+	width: 100%;
 	margin-top: 20px;
 }
 

@@ -1,46 +1,40 @@
 import express from 'express'
-import mongoose from 'mongoose'
 import cors from 'cors'
-import helmet from 'helmet'
-import compression from 'compression'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 
-//set up the express
+//create the app server.
 const app = express()
 dotenv.config()
 
-//make use of the middlewares.
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cors())
-app.use(helmet())
-app.use(compression())
-
-//upload images.
-
-//handle the routes.
-app.get('/', async (req, res) => {
-	res.send('Hello world from nodejs')
-})
 //connect to the database.
 mongoose.set('strictQuery', false)
 mongoose
 	.connect(process.env.MONGODB_URI)
 	.then(() => {
-		console.log('Successfully, Connected to the db')
+		console.log('App, connected to the Database')
 	})
 	.catch(() => {
-		console.log('Unable to connect, to the db.')
+		console.log('Unable To Connect To The Database')
 	})
 
-//generate the app server.
-const port = process.env.PORT || 5000
+//handle the middlewares.
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
+//upload the images.
 
-//listen to the server.
+//handle the router system.
+app.get('/', async (req, res) => {
+	res.send('Hello World.')
+})
+//create a listening server
+const port = process.env.PORT || 5500
+
 app.listen(port, error => {
 	if (error) {
-		return console.log('Cant Listen to Server because of', error)
+		return console.log('Unable to listen to the server')
 	}
 
-	console.log(`Server is Listening to port -->${port}`)
+	console.log(`Server is up and running on port , ${port}`)
 })
