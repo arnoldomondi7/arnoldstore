@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import ProductRoute from './routers/productRouter.js'
+import AuthRoutes from './routers/authRouter.js'
 
 //create the app server.
 const app = express()
@@ -25,11 +27,11 @@ app.use(cors())
 //upload the images.
 
 //handle the router system.
-app.get('/', async (req, res) => {
-	res.send('Hello World.')
-})
+
+app.use('/api/product', ProductRoute)
+app.use('/api/auth', AuthRoutes)
 //create a listening server
-const port = process.env.PORT || 5500
+const port = process.env.PORT
 
 app.listen(port, error => {
 	if (error) {
