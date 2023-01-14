@@ -1,14 +1,26 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
+	//get the logged in user.
+	const user = useSelector(state => state.user.currentUser)
 	return (
 		<div className='header'>
 			<div className='header-top'>
 				<div className='header-top-links'>
-					<Link to='/account'>Account: Guest</Link>
-					<Link to='/cart'>Your Cart (0)</Link>
-					<Link to='/login'>Login/Register</Link>
+					{user ? (
+						<>
+							<Link to='/account'>Account: {user.name}</Link>
+							<Link to='/cart'>Your Cart (0)</Link>
+							<span className='header-logout'>Logout</span>
+						</>
+					) : (
+						<>
+							<Link to='/account'>Account: Guest</Link>
+							<Link to='/login'>Login/Register</Link>
+						</>
+					)}
 				</div>
 			</div>
 			<div className='header-bottom'>

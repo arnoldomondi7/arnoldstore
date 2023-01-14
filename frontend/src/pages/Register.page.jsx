@@ -1,7 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Register = () => {
+	// handle navigate createHook.
+	const navigate = useNavigate()
+
+	//get the logged in user.
+	const user = useSelector(state => state.user.currentUser)
+
+	//ensure the logged in users dont access this page.
+	useEffect(() => {
+		user && navigate('/')
+	}, [navigate, user])
 	return (
 		<div className='form-sign'>
 			<div className='form-sign-div'>

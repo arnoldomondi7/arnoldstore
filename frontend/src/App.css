@@ -26,6 +26,17 @@
 	color: #1e1e1e;
 }
 
+.header-logout {
+	margin: 0px 15px;
+	color: #a1a1a1;
+	text-decoration: none;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.header-logout:hover {
+	color: #1e1e1e;
+}
 .header-bottom {
 	display: flex;
 	justify-content: space-between;
@@ -754,7 +765,7 @@
 .subscribe-right {
 	display: flex;
 	width: 40%;
-	padding-top: 40px;
+	padding-top: 50px;
 }
 
 .subscribe-right-left,
@@ -764,7 +775,7 @@
 
 .subscribe-right-left div,
 .subscribe-right-right div {
-	margin-bottom: 30px;
+	margin-bottom: 35px;
 }
 
 .subscribe-right-left div h4,
@@ -910,6 +921,13 @@
 	color: #2a2a2a;
 }
 
+.form-error {
+	color: #ff0000;
+	font-size: 14px;
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+}
 /* ABOUT PAGE */
 .about-us {
 	min-height: 100vh;
