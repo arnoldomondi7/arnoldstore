@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { FaShoppingCart, FaStar } from 'react-icons/fa'
+import { useParams } from 'react-router'
 
 const ProductDetails = () => {
+	//get the specific params.
+	const params = useParams()
+	//get the id from the params.
+	const { id } = params
+	//set the product detail in the state
+	const [product, setProduct] = useState([])
+
+	// get the detail from the useEffect
+	useEffect(() => {
+		const fetchData = async () => {
+			const { data } = await axios.get(`/api/product/${id}`)
+
+			//set the products in the setProducts.
+			setProduct(data)
+			//check in the log if the data is there.
+			console.log(data)
+		}
+
+		fetchData()
+	}, [id])
 	return (
 		<div className='product-details'>
 			<div className='product-details-div'>
@@ -18,28 +40,27 @@ const ProductDetails = () => {
 				<div className='product-details-bottom'>
 					<div className='product-details-bottom-left'>
 						<div className='product-details-bottom-img'>
-							<img src='../assets/uploads/single-prod-1.jpg' alt='' />
+							<img src={`../assets/${product.image}`} alt={product.name} />
 						</div>
 						<div className='product-details-bottom-img'>
-							<img src='../assets/uploads/single-prod-2.jpg' alt='' />
+							<img src={`../assets/${product?.imageOne}`} alt={product.name} />
 						</div>
 					</div>
 					<div className='product-details-bottom-right'>
 						<div className='product-details-bottom-text'>
 							<div className='product-details-bottom-content'>
-								<h4>Fresh Air Jordans 1</h4>
+								<h4>{product.name}</h4>
 								<span>
-									5 <FaStar />
+									{product.star}
+									<FaStar />
 								</span>
 							</div>
 
-							<span className='product-price'>$299.99.</span>
-
-							<span className='product-desc'>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Excepturi, veritatis dolore, dolor itaque fugit illum facere
-								magni.
+							<span className='product-price'>
+								${product.price?.toFixed(2)}
 							</span>
+
+							<span className='product-desc'>{product.description}</span>
 						</div>
 						<div className='product-details-bottom-socials'>
 							<div className='product-quantity'>
@@ -52,7 +73,7 @@ const ProductDetails = () => {
 										type='number'
 										min='1'
 										step='1'
-										value='1'
+										defaultValue='1'
 										className='value'
 									/>
 									<input type='button' value='+' className='plus' />

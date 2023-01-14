@@ -15,14 +15,12 @@ const Subscribe = () => {
 					</span>
 
 					<form>
-						<div className='subscribe-form-groups'>
-							<div className='subscribe-form-group'>
-								<input type='text' placeholder='Enter Name' required />
-								<input type='email' placeholder='Enter Email' required />
-								<button>
-									<FaPaperPlane />
-								</button>
-							</div>
+						<div className='subscribe-form-group'>
+							<input type='text' placeholder='Enter Name' required />
+							<input type='email' placeholder='Enter Email' required />
+							<button>
+								<FaPaperPlane />
+							</button>
 						</div>
 					</form>
 				</div>

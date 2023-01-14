@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductItem from './ProductItem.comp'
+import axios from 'axios'
 
 const ProductItems = () => {
+	//set products from the backend into the state.
+	const [products, setProducts] = useState([])
+
+	//get the data from the database.
+	//to the frontend.
+	useEffect(() => {
+		const fetchData = async () => {
+			const { data } = await axios.get('/api/product/all')
+
+			//set the products in the setProducts.
+			setProducts(data)
+			//check in the log if the data is there.
+			// console.log(data)
+		}
+
+		//call the function.
+		fetchData()
+	}, [])
 	return (
 		<div className='products-items'>
 			<div className='products-items-div'>
@@ -21,14 +40,15 @@ const ProductItems = () => {
 					<h2>Lattest Products</h2>
 					<span>Have A Look At All Of Our Products</span>
 				</div>
-
-				<div className='products-items-images'>
-					<ProductItem />
-					<ProductItem />
-					<ProductItem />
-					<ProductItem />
-					<ProductItem />
-				</div>
+				{products.length === 0 ? (
+					<h4 className='no-products'>Currently There Are No Products</h4>
+				) : (
+					<div className='products-items-images'>
+						{products.map((product, i) => (
+							<ProductItem product={product} key={i} />
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	)
