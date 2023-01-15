@@ -1,10 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
+import { logout } from '../redux/apiCalls.redux'
 
 const Header = () => {
 	//get the logged in user.
 	const user = useSelector(state => state.user.currentUser)
+
+	//get the dispatch,
+	const dispatch = useDispatch()
+	//handle logout of the user.
+	const onLogoutHandler = event => {
+		event.preventDefault()
+		//get the logout function.
+		logout(dispatch)
+	}
 	return (
 		<div className='header'>
 			<div className='header-top'>
@@ -13,7 +23,9 @@ const Header = () => {
 						<>
 							<Link to='/account'>Account: {user.name}</Link>
 							<Link to='/cart'>Your Cart (0)</Link>
-							<span className='header-logout'>Logout</span>
+							<span className='header-logout' onClick={onLogoutHandler}>
+								Logout
+							</span>
 						</>
 					) : (
 						<>

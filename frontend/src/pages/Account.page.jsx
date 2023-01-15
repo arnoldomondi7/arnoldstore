@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { ImBin } from 'react-icons/im'
 import 'react-tabs/style/react-tabs.css'
-import { FaEdit, FaImage } from 'react-icons/fa'
 import { AiOutlineUpload, AiTwotoneEdit } from 'react-icons/ai'
 import Orders from '../components/Orders.comp'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
+import UserInfo from '../components/UserInfo.comp'
+import ChangePwd from '../components/ChangePwd.comp'
+import { FaImage } from 'react-icons/fa'
 
 const Account = () => {
+	//get the user fro redux.
+	const user = useSelector(state => state.user.currentUser)
+
+	//get the navigation hook from react-router-dom.
+	const navigate = useNavigate()
+
+	//only logged in users can access this page.
+	useEffect(() => {
+		!user && navigate('/')
+	}, [user, navigate])
 	return (
 		<div className='account'>
 			<h3 className='account-title'>My Profile</h3>
-			<p className='account-subtitle'>Welcome, Arnold Omondi</p>
+			<p className='account-subtitle'>Welcome, {user.name}</p>
 			<Tabs>
 				<TabList>
 					<Tab>Info</Tab>
@@ -23,41 +37,7 @@ const Account = () => {
 				<TabPanel>
 					<h3 className='account-content-title'>Info</h3>
 					<div className='account-content-groups'>
-						<div className='account-content-group-left'>
-							<div className='account-content-group'>
-								<span className='account-light'>Name:</span>
-								<span className='account-bold'>Arnold Omondi</span>
-							</div>
-
-							<div className='account-content-group'>
-								<span className='account-light'>Email:</span>
-								<span className='account-bold'>arnoldomondi7@gmail.com</span>
-							</div>
-
-							<div className='account-content-group'>
-								<span className='account-light'>Country:</span>
-								<span className='account-bold'>Kenya</span>
-							</div>
-
-							<div className='account-content-group'>
-								<span className='account-light'>City:</span>
-								<span className='account-bold'>00200-Nairobi</span>
-							</div>
-
-							<div className='account-content-group'>
-								<span className='account-light'>Address:</span>
-								<span className='account-bold'>Wayaki way.</span>
-							</div>
-
-							<div className='account-content-group'>
-								<span className='account-light'>Phone:</span>
-								<span className='account-bold'>+254705257149</span>
-							</div>
-						</div>
-
-						<div className='account-content-group-right'>
-							<img src='./assets/uploads/default.png' alt='' />
-						</div>
+						<UserInfo user={user} />
 					</div>
 				</TabPanel>
 				<TabPanel>
@@ -138,29 +118,7 @@ const Account = () => {
 				<TabPanel>
 					<h3 className='account-content-title'>Change Password</h3>
 					<div className='form-sign-div update-password'>
-						<form>
-							<div className='form-sign-groups'>
-								<input
-									type='password'
-									required
-									placeholder='Enter Old Password'
-								/>
-								<input
-									type='password'
-									required
-									placeholder='Enter New Password'
-								/>
-								<input
-									type='password'
-									required
-									placeholder='Re-Enter New Password'
-								/>
-							</div>
-
-							<button>
-								Update Password <FaEdit />
-							</button>
-						</form>
+						<ChangePwd />
 					</div>
 				</TabPanel>
 

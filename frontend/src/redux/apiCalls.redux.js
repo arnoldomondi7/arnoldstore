@@ -1,6 +1,12 @@
 import { publicRequest } from '../requestMethod'
-import { loginFailure, loginStart, loginSuccess } from './userReducer'
+import {
+	loginFailure,
+	loginStart,
+	loginSuccess,
+	logoutSuccess,
+} from './userReducer'
 
+//handle login of the user
 export const login = async (dispatch, user) => {
 	dispatch(loginStart())
 
@@ -12,4 +18,10 @@ export const login = async (dispatch, user) => {
 	} catch (error) {
 		dispatch(loginFailure())
 	}
+}
+
+//handle logout of the user.
+export const logout = async dispatch => {
+	dispatch(logoutSuccess())
+	window.location.href = '/login'
 }

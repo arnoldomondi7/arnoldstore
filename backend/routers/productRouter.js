@@ -1,7 +1,7 @@
 import express from 'express'
 
 //create the product route.
-const ProductRoute = express.Router()
+const ProductRoutes = express.Router()
 
 //get the controller functions
 import {
@@ -12,13 +12,13 @@ import {
 import verifyTokenAndAdmin from '../verifyToken.js'
 
 //create a product.
-ProductRoute.post('/add', verifyTokenAndAdmin, createProduct)
+ProductRoutes.post('/add', verifyTokenAndAdmin, createProduct)
 
 //get all the products.
-ProductRoute.get('/all', getAllProduct)
+ProductRoutes.get('/all', getAllProduct)
 
 //get a single products.
-ProductRoute.get('/:id', getSingleProduct)
+ProductRoutes.get('/:id', getSingleProduct)
 
 //export the product route.
-export default ProductRoute
+export default ProductRoutes
