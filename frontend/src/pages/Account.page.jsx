@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { ImBin } from 'react-icons/im'
 import 'react-tabs/style/react-tabs.css'
-import { AiOutlineUpload, AiTwotoneEdit } from 'react-icons/ai'
 import Orders from '../components/Orders.comp'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import UserInfo from '../components/UserInfo.comp'
 import ChangePwd from '../components/ChangePwd.comp'
-import { FaImage } from 'react-icons/fa'
+import CloseAcc from '../components/CloseAcc.comp'
+import EditInfo from '../components/EditInfo.comp'
+import UpdateImage from '../components/UpdateImage.comp'
 
 const Account = () => {
 	//get the user fro redux.
@@ -24,7 +24,7 @@ const Account = () => {
 	return (
 		<div className='account'>
 			<h3 className='account-title'>My Profile</h3>
-			<p className='account-subtitle'>Welcome, {user.name}</p>
+			<p className='account-subtitle'>Welcome, {user.username}</p>
 			<Tabs>
 				<TabList>
 					<Tab>Info</Tab>
@@ -35,7 +35,7 @@ const Account = () => {
 				</TabList>
 
 				<TabPanel>
-					<h3 className='account-content-title'>Info</h3>
+					<h3 className='account-content-title'>USER INFORMATION:</h3>
 					<div className='account-content-groups'>
 						<UserInfo user={user} />
 					</div>
@@ -51,86 +51,25 @@ const Account = () => {
 					<h3 className='account-content-title'>Edit Info</h3>
 					<div className='account-content-groups'>
 						<div className='form-sign-div update-info'>
-							<form>
-								<div className='form-sign-groups'>
-									<input
-										type='text'
-										required
-										placeholder='Enter Your Name'
-										value='Arnold Omondi'
-									/>
-									<input
-										type='email'
-										required
-										placeholder='Enter EMail'
-										value='arnoldomondi7@gmail.com'
-									/>
-									<input
-										type='text'
-										required
-										placeholder='Enter Your Country'
-										value='Kenya'
-									/>
-									<input
-										type='text'
-										required
-										placeholder='Enter Your City'
-										value='Nairobi'
-									/>
-									<input
-										type='text'
-										required
-										placeholder='Enter Your Address'
-										value='Wayaki way '
-									/>
-
-									<input
-										type='text'
-										required
-										placeholder='Enter Your Phone'
-										value='+254705257149'
-									/>
-								</div>
-
-								<button>
-									Edit Info <AiTwotoneEdit />
-								</button>
-							</form>
+							<EditInfo />
 						</div>
 
 						<div className='form-sign-div update-image'>
-							<form>
-								<div className='update-image'>
-									<label htmlFor='image' className='label-image'>
-										<FaImage />
-									</label>
-
-									<input type='file' id='image' className='user-image' />
-								</div>
-
-								<button>
-									Update Image <AiOutlineUpload />
-								</button>
-							</form>
+							<UpdateImage />
 						</div>
 					</div>
 				</TabPanel>
 				<TabPanel>
 					<h3 className='account-content-title'>Change Password</h3>
 					<div className='form-sign-div update-password'>
-						<ChangePwd />
+						<ChangePwd user={user} />
 					</div>
 				</TabPanel>
 
 				<TabPanel>
 					<h3 className='account-content-title'>Account Settings</h3>
 					<div className='account-content-groups'>
-						<p className='account-close-text'>
-							You Can't Turn Back Once the Button Is Clicked
-						</p>
-						<button className='close-button'>
-							Close Your Account <ImBin />
-						</button>
+						<CloseAcc />
 					</div>
 				</TabPanel>
 			</Tabs>

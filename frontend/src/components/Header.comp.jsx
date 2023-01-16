@@ -21,7 +21,7 @@ const Header = () => {
 				<div className='header-top-links'>
 					{user ? (
 						<>
-							<Link to='/account'>Account: {user.name}</Link>
+							<Link to='/account'>Account: {user.username}</Link>
 							<Link to='/cart'>Your Cart (0)</Link>
 							<span className='header-logout' onClick={onLogoutHandler}>
 								Logout

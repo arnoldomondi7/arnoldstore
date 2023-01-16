@@ -6,7 +6,7 @@ const UserInfo = ({ user }) => {
 			<div className='account-content-group-left'>
 				<div className='account-content-group'>
 					<span className='account-light'>Name:</span>
-					<span className='account-bold'>{user.name}</span>
+					<span className='account-bold'>{user.username}</span>
 				</div>
 
 				<div className='account-content-group'>

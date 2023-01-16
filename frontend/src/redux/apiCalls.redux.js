@@ -4,6 +4,8 @@ import {
 	loginStart,
 	loginSuccess,
 	logoutSuccess,
+	updateInfoSuccess,
+	updatePasswordSuccess,
 } from './userReducer'
 
 //handle login of the user
@@ -24,4 +26,24 @@ export const login = async (dispatch, user) => {
 export const logout = async dispatch => {
 	dispatch(logoutSuccess())
 	window.location.href = '/login'
+}
+
+//handle update password.
+export const updatePassword = async (dispatch, user) => {
+	const { data } = await publicRequest.put('/api/user/update-password', user)
+	dispatch(updatePasswordSuccess(data))
+}
+
+//function to delete the account.
+export const deleteAccount = async (dispatch, user) => {
+	const { data } = await publicRequest.delete('/api/user/' + user)
+	dispatch(logoutSuccess(data))
+	//after a success delete, redirect user to the login.
+	window.location.href = '/login'
+}
+
+//functions to update, the user.
+export const updateInfo = async (dispatch, user) => {
+	const { data } = await publicRequest.put('/api/user/update-info', user)
+	dispatch(updateInfoSuccess(data))
 }
