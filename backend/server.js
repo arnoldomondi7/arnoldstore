@@ -9,6 +9,7 @@ import ProductRoutes from './routers/productRouter.js'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import multer from 'multer'
+import OrderRoute from './routers/orderRoute.js'
 
 //create the app server.
 const app = express()
@@ -64,6 +65,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
 app.use('/api/auth', AuthRoutes)
 app.use('/api/product', ProductRoutes)
 app.use('/api/user', UserRoutes)
+app.use('/api/order', OrderRoute)
 
 //create a listening server
 const port = process.env.PORT

@@ -1,4 +1,5 @@
 import { publicRequest } from '../requestMethod'
+import { cartClear } from './cartReducer'
 import {
 	loginFailure,
 	loginStart,
@@ -25,6 +26,7 @@ export const login = async (dispatch, user) => {
 //handle logout of the user.
 export const logout = async dispatch => {
 	dispatch(logoutSuccess())
+	dispatch(cartClear())
 	window.location.href = '/login'
 }
 
@@ -46,4 +48,9 @@ export const deleteAccount = async (dispatch, user) => {
 export const updateInfo = async (dispatch, user) => {
 	const { data } = await publicRequest.put('/api/user/update-info', user)
 	dispatch(updateInfoSuccess(data))
+}
+
+export const deleteAllFromCart = async dispatch => {
+	dispatch(cartClear())
+	window.location.href = '/account'
 }

@@ -142,16 +142,17 @@ const CartItems = () => {
 									</span>
 								</div>
 							</div>
-
-							<button className='checkout' onClick={() => setOpen(true)}>
-								Proceed To Checkout <FaTruck />
-							</button>
+							{cart.products.length !== 0 && (
+								<button className='checkout' onClick={() => setOpen(true)}>
+									Proceed To Checkout <FaTruck />
+								</button>
+							)}
 						</div>
 					</div>
 				</div>
 			</div>
 
-			{open && <Checkout setOpen={setOpen} />}
+			{open && <Checkout setOpen={setOpen} finishedPrice={finishedPrice} />}
 		</div>
 	)
 }
