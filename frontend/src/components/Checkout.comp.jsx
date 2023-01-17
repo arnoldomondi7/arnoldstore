@@ -30,8 +30,9 @@ const Checkout = ({ setOpen, finishedPrice }) => {
 					city: city,
 					address: address,
 					phone: phone,
-					products: cart,
+					products: cart.products,
 					total: finishedPrice,
+					quantity: cart.quantity,
 				})
 
 				//clear the cart once the order had been made.

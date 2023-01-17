@@ -40,21 +40,21 @@ const EditInfo = () => {
 	return (
 		<form onSubmit={onUpdateInfoHandler}>
 			<div className='form-sign-groups'>
-				<label>Enter Name</label>
+				<label>Enter Name:</label>
 				<input
 					type='text'
 					placeholder='Enter Your Name'
 					defaultValue={name}
 					onChange={event => setName(event.target.value)}
 				/>
-				<label>Enter Email</label>
+				<label>Enter Email:</label>
 				<input
 					type='email'
 					placeholder='Enter EMail'
 					defaultValue={email}
 					onChange={event => setEmail(event.target.value)}
 				/>
-				<label>Enter Country</label>
+				<label>Enter Country:</label>
 				<input
 					type='text'
 					placeholder='Enter Your Country'
@@ -62,7 +62,7 @@ const EditInfo = () => {
 					onChange={event => setCountry(event.target.value)}
 				/>
 
-				<label>Enter City</label>
+				<label>Enter City:</label>
 				<input
 					type='text'
 					placeholder='Enter Your City'
@@ -70,14 +70,14 @@ const EditInfo = () => {
 					onChange={event => setCity(event.target.value)}
 				/>
 
-				<label>Enter Address</label>
+				<label>Enter Address:</label>
 				<input
 					type='text'
 					placeholder='Enter Your Address'
 					defaultValue={address}
 					onChange={event => setAddress(event.target.value)}
 				/>
-				<label>Enter Phone</label>
+				<label>Enter Phone:</label>
 				<input
 					type='text'
 					placeholder='Enter Your Phone'

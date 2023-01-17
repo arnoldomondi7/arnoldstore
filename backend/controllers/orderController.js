@@ -11,3 +11,26 @@ export const orderPost = async (req, res) => {
 		res.status(500).send(error)
 	}
 }
+
+//controller function to get user order.
+export const getUserOrder = async (req, res) => {
+	try {
+		const orders = await Order.find({ userId: req.params.userId })
+
+		//send the response to the users.
+		res.status(200).send(orders)
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}
+
+//controller function to get my single order.
+export const getMyOrder = async (req, res) => {
+	const order = await Order.findById(req.params.id)
+
+	if (order) {
+		res.status(200).send(order)
+	} else {
+		res.status(400).send({ message: 'Order Not Found' })
+	}
+}

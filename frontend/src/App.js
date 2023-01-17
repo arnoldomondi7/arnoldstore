@@ -27,7 +27,7 @@ const App = () => {
 					<Route path='/register' element={<Register />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/account' element={<Account />} />
-					<Route path='/order/:id' element={<Order />} />
+					<Route path='/orders/:id' element={<Order />} />
 				</Routes>
 			</Layout>
 		</div>
