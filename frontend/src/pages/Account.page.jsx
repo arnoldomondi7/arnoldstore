@@ -24,7 +24,7 @@ const Account = () => {
 	return (
 		<div className='account'>
 			<h3 className='account-title'>My Profile</h3>
-			<p className='account-subtitle'>Welcome, {user.username}</p>
+			<p className='account-subtitle'>Welcome, {user.name}</p>
 			<Tabs>
 				<TabList>
 					<Tab>Info</Tab>

@@ -87,3 +87,21 @@ export const deleteAccount = async (req, res) => {
 		res.status(500).send(error)
 	}
 }
+
+//controller function to update the image.
+export const updateImage = async (req, res) => {
+	if (req.body.userId === req.params.id) {
+		try {
+			await User.findByIdAndUpdate(req.params.id, {
+				$set: req.body,
+			})
+			res.status(200).send('Image Successfully Updated')
+		} catch (error) {
+			return res.status(500).send(error)
+		}
+	} else {
+		return res
+			.status(403)
+			.send('Access Denied! You Can Only Update Your Account')
+	}
+}

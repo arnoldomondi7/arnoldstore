@@ -6,6 +6,7 @@ import { logout } from '../redux/apiCalls.redux'
 const Header = () => {
 	//get the logged in user.
 	const user = useSelector(state => state.user.currentUser)
+	const quantity = useSelector(state => state.cart.quantity)
 
 	//get the dispatch,
 	const dispatch = useDispatch()
@@ -21,8 +22,8 @@ const Header = () => {
 				<div className='header-top-links'>
 					{user ? (
 						<>
-							<Link to='/account'>Account: {user.username}</Link>
-							<Link to='/cart'>Your Cart (0)</Link>
+							<Link to='/account'>Account: {user.name}</Link>
+							<Link to='/cart'>Your Cart ({quantity})</Link>
 							<span className='header-logout' onClick={onLogoutHandler}>
 								Logout
 							</span>

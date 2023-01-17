@@ -6,7 +6,7 @@ const UserInfo = ({ user }) => {
 			<div className='account-content-group-left'>
 				<div className='account-content-group'>
 					<span className='account-light'>Name:</span>
-					<span className='account-bold'>{user.username}</span>
+					<span className='account-bold'>{user.name}</span>
 				</div>
 
 				<div className='account-content-group'>
@@ -16,7 +16,7 @@ const UserInfo = ({ user }) => {
 
 				<div className='account-content-group'>
 					<span className='account-light'>Country:</span>
-					<span className='account-bold'>{user.country}</span>
+					<div className='account-bold'>{user.country}</div>
 				</div>
 
 				<div className='account-content-group'>

@@ -11,6 +11,7 @@ import {
 	REHYDRATE,
 	persistReducer,
 } from 'redux-persist'
+import cartReducer from './cartReducer'
 
 const persistConfig = {
 	key: 'root',
@@ -20,6 +21,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	user: userReducer,
+	cart: cartReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
