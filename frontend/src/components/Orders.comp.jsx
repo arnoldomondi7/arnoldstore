@@ -14,8 +14,6 @@ const Orders = () => {
 		const fetchData = async () => {
 			const { data } = await axios.get(`/api/order/find/${userId}`)
 			setOrders(data)
-
-			// console.log(data)
 		}
 
 		fetchData()

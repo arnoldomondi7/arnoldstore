@@ -84,7 +84,7 @@ const Order = () => {
 							Phone:<span>{order.phone}</span>
 						</p>
 						<p className='order-text'>
-							Number Of Items:<span>{order.quantity}</span>
+							Number Of Itemsgit add . :<span>{order.quantity}</span>
 						</p>
 
 						<p className='order-text'>
