@@ -1,5 +1,36 @@
+/* PAGES */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+::selection {
+	background-color: #2a2a2a;
+	color: #fff;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+.main-wraper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header,
+.footer {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: auto;
+}
+
+.main-container {
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: auto;
 }
