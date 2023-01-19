@@ -48,11 +48,219 @@
 .footer {
 	background-color: #2a2a2a;
 	color: #fff;
-	height: 100px;
+	height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .copyright {
 	text-align: center;
+	font-size: 14px;
+}
+
+/* LOG IN PAGE. */
+.form-sign {
+	min-height: 100vh;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding: 80px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-sign-div {
+	width: 500px;
+}
+
+.form-sign-title {
+	color: #2a2a2a;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+
+.form-sign-groups {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-sign-groups input {
+	width: 100%;
+	height: 44px;
+	margin-bottom: 22px;
+	line-height: 44px;
+	padding: 0px 15px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 500;
+	color: #aaa;
+	border-radius: 0px;
+	border: 1px solid #7a7a7a;
+	box-shadow: none;
+}
+
+.form-sign-groups input:focus {
+	outline-color: #ffc107;
+}
+
+.form-sign-div button {
+	display: block;
+	margin: 25px auto;
+	border-color: #2a2a2a;
+	color: #2a2a2a;
+	font-size: 13px;
+	padding: 12px 25px;
+	font-weight: 500;
+	transition: all 0.5s;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.form-sign-div button:hover {
+	background-color: #2a2a2a;
+	color: #fff;
+	font-weight: 500;
+}
+
+.form-error {
+	color: #ff0000;
+	font-size: 14px;
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+}
+
+.form-success {
+	color: #00ff00;
+	font-size: 14px;
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+}
+/* ACCOUNT */
+.account {
+	min-height: 100vh;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding: 80px 40px;
+}
+
+.account-title {
+	color: #2a2a2a;
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 38px;
+	font-weight: 700;
+}
+
+.account-subtitle {
+	color: #a1a1a1;
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 19px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.react-tabs {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.react-tabs__tab-list {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	border-bottom: none !important;
+}
+
+.react-tabs__tab {
+	height: 44px;
+	list-style: none;
+	padding: 12px 6px;
+	cursor: pointer;
+	color: #2a2a2a !important;
+}
+
+.react-tabs__tab--selected {
+	background: #2a2a2a !important;
+	border-color: transparent;
+	color: #fff !important;
+}
+
+.react-tabs__tab-panel {
+	display: none;
+	width: 300px;
+}
+
+.react-tabs__tab-panel--selected {
+	display: block;
+}
+
+.react-tabs__tab {
+	padding-left: 24px;
+}
+
+.react-tabs__tab--selected {
+	padding-left: 21px;
+}
+
+.panel-content {
+	text-align: center;
+}
+
+.react-tabs__tab-panel {
+	width: 100%;
+	border-left: 3px dotted #eee;
+	padding: 0 40px;
+}
+
+.account-content-title {
+	margin-bottom: 20px;
+	color: #2a2a2a;
+	font-weight: 600;
+	font-style: italic;
+}
+
+.account-content-groups {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.account-light {
+	margin-right: 10px;
+}
+
+.account-bold {
+	font-weight: bold;
+}
+
+/* DASHBOARD */
+.dashboard-groups {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.dashboard-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.badge {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #1e1e1e;
+	color: #fff;
 }
