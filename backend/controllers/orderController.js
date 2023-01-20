@@ -34,3 +34,15 @@ export const getMyOrder = async (req, res) => {
 		res.status(400).send({ message: 'Order Not Found' })
 	}
 }
+
+//controller function to get all the orders to the admin.
+export const getAllOrders = async (req, res) => {
+	try {
+		const getOrders = await Order.find()
+
+		//send res to the user.
+		res.status(200).send(getOrders)
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}

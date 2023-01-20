@@ -105,3 +105,15 @@ export const updateImage = async (req, res) => {
 			.send('Access Denied! You Can Only Update Your Account')
 	}
 }
+
+//controller function to get all the users to the admin.
+export const getAllUsers = async (req, res) => {
+	try {
+		const getAllUserss = await User.find()
+
+		//send res to the user.
+		res.status(200).send(getAllUserss)
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}

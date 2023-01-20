@@ -4,6 +4,7 @@ const OrderRoute = express.Router()
 
 //controller function to create the orders.
 import {
+	getAllOrders,
 	getMyOrder,
 	getUserOrder,
 	orderPost,
@@ -11,6 +12,9 @@ import {
 
 //create orders
 OrderRoute.post('/add', orderPost)
+
+//get all orders by the admin.
+OrderRoute.get('/allorders', getAllOrders)
 
 //get the user orders.
 OrderRoute.get('/find/:userId', getUserOrder)

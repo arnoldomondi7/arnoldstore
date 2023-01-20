@@ -1,11 +1,26 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { logout } from '../redux/apiCalls.redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-	const admin = 'Arnold'
+	const user = useSelector(state => state.user.currentUser)
+
+	const dispatch = useDispatch()
+
+	const navigate = useNavigate()
+
 	const onLogoutHandler = event => {
 		event.preventDefault()
+		logout(dispatch)
 	}
+
+	useEffect(() => {
+		!user && navigate('/login')
+	}, [user, navigate])
+
 	return (
 		<div className='header'>
 			<div className='header-top'>
@@ -16,14 +31,9 @@ const Header = () => {
 					</NavLink>
 				</div>
 				<div className='header-top-links'>
-					{admin && (
-						<>
-							<img src='' alt='' />
-							<span className='header-logout' onClick={onLogoutHandler}>
-								Logout
-							</span>
-						</>
-					)}
+					<span className='header-logout' onClick={onLogoutHandler}>
+						Logout
+					</span>
 				</div>
 			</div>
 		</div>

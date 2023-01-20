@@ -4,15 +4,20 @@ import Footer from '../components/Footer.comp'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import Dashboard from '../components/Dashboard.comp'
+import Products from '../components/Products.comp'
+import { useSelector } from 'react-redux'
+import Users from '../components/Users.comp'
+import Orders from '../components/Orders.comp'
 
 const Home = () => {
+	const user = useSelector(state => state.user.currentUser)
 	return (
 		<>
 			<Header />
 			<main className='main-container'>
 				<div className='account'>
 					<h3 className='account-title'>Admin Panel</h3>
-					<p className='account-subtitle'>Admin: Arnold Omondi</p>
+					<p className='account-subtitle'>Admin: {user.name}</p>
 					<Tabs>
 						<TabList>
 							<Tab>Dashboard</Tab>
@@ -27,14 +32,16 @@ const Home = () => {
 						</TabPanel>
 						<TabPanel>
 							<h3 className='account-content-title'>Products</h3>
+							<Products />
 						</TabPanel>
 
 						<TabPanel>
 							<h3 className='account-content-title'>Users</h3>
+							<Users />
 						</TabPanel>
 						<TabPanel>
 							<h3 className='account-content-title'>Orders</h3>
-							<div className='form-sign-div update-password'></div>
+							<Orders />
 						</TabPanel>
 					</Tabs>
 				</div>

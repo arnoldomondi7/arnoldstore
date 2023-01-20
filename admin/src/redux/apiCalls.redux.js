@@ -1,11 +1,10 @@
 import { publicRequest } from '../requestMethod'
-import { cartClear } from './cartReducer'
 import {
 	loginFailure,
 	loginStart,
 	loginSuccess,
 	logoutSuccess,
-} from './userReducer'
+} from './userReducer.redux'
 
 //handle login of the user
 export const login = async (dispatch, user) => {
@@ -13,9 +12,16 @@ export const login = async (dispatch, user) => {
 
 	try {
 		const { data } = await publicRequest.post('/api/auth/login', user)
-		dispatch(loginSuccess(data))
-		//after a success sign up, redirect to the homepage.
-		window.location.href = '/'
+		//handle the login for the admin.
+		const isAdmin = data
+
+		if (isAdmin.isAdmin === true) {
+			dispatch(loginSuccess(data))
+			//after a success sign up, redirect to the homepage.
+			window.location.href = '/'
+		} else {
+			window.location.href = '/login'
+		}
 	} catch (error) {
 		dispatch(loginFailure())
 	}
@@ -24,6 +30,5 @@ export const login = async (dispatch, user) => {
 //handle logout of the user.
 export const logout = async dispatch => {
 	dispatch(logoutSuccess())
-	dispatch(cartClear())
 	window.location.href = '/login'
 }

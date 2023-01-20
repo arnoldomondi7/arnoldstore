@@ -58,8 +58,8 @@ const UpdateImage = () => {
 				<input
 					type='file'
 					id='image'
-					accept='.png, .jpg, .jpeg'
 					className='user-image'
+					accept='.png, .jpg, .jpeg'
 					onChange={event => setImage(event.target.files[0])}
 				/>
 			</div>
