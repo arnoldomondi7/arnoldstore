@@ -4,7 +4,9 @@ const OrderRoute = express.Router()
 
 //controller function to create the orders.
 import {
+	countAllOrders,
 	getAllOrders,
+	getAllSum,
 	getMyOrder,
 	getUserOrder,
 	orderPost,
@@ -21,6 +23,12 @@ OrderRoute.get('/find/:userId', getUserOrder)
 
 //get my order.
 OrderRoute.get('/:id', getMyOrder)
+
+//get the number of all the orders in the application.
+OrderRoute.get('/orders/count-orders', countAllOrders)
+
+//get the total sum for the products.
+OrderRoute.get('/sum/get-all-sum', getAllSum)
 
 //export the OrderRoute.
 export default OrderRoute

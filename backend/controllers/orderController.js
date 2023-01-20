@@ -46,3 +46,34 @@ export const getAllOrders = async (req, res) => {
 		res.status(500).send(error)
 	}
 }
+
+//function to count all the orders.
+export const countAllOrders = async (req, res) => {
+	try {
+		const countOrders = await Order.countDocuments()
+
+		//send the response to the user.
+		res.status(200).send({ count: countOrders })
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}
+
+//function to get all the sum.
+export const getAllSum = async (req, res) => {
+	try {
+		const totalSum = await Order.aggregate([
+			{
+				$group: {
+					_id: null,
+					count: { $sum: '$total' },
+				},
+			},
+		])
+
+		//send res to the admin.
+		res.status(200).send(totalSum)
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}

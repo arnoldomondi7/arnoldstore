@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../redux/apiCalls.redux'
+import { useEffect } from 'react'
 
 const Login = () => {
 	//get the logged in user.
@@ -23,6 +24,9 @@ const Login = () => {
 		login(dispatch, { email, password })
 	}
 
+	useEffect(() => {
+		user && navigate('/')
+	})
 	return (
 		<div className='form-sign'>
 			<div className='form-sign-div'>

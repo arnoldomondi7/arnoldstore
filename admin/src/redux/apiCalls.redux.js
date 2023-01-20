@@ -1,4 +1,10 @@
-import { publicRequest } from '../requestMethod'
+import { publicRequest, userRequest } from '../requestMethod'
+import {
+	addProductFailure,
+	addProductStart,
+	addProductSuccess,
+	updateInfoSuccess,
+} from './productReducer.redux'
 import {
 	loginFailure,
 	loginStart,
@@ -31,4 +37,25 @@ export const login = async (dispatch, user) => {
 export const logout = async dispatch => {
 	dispatch(logoutSuccess())
 	window.location.href = '/login'
+}
+
+//handle login of the user
+export const addProducts = async (dispatch, product) => {
+	dispatch(addProductStart())
+	try {
+		const response = await userRequest.post(`/api/product/add`, product)
+
+		dispatch(addProductSuccess(response.data))
+	} catch (error) {
+		dispatch(addProductFailure())
+	}
+}
+
+//functions to update, the user.
+export const updateProduct = async (dispatch, product) => {
+	const { data } = await publicRequest.put(
+		'/api/product/update-product',
+		product
+	)
+	dispatch(updateInfoSuccess(data))
 }

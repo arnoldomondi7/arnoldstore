@@ -9,6 +9,7 @@ import {
 	updateImage,
 	updatePassword,
 	updateUserInfo,
+	countAllUsers,
 } from '../controllers/userController.js'
 
 //get all users to the admin.
@@ -25,4 +26,8 @@ UserRoutes.delete('/:id', deleteAccount)
 
 //update the image route.
 UserRoutes.put('/update/:id', updateImage)
+
+//get the number of all the users in the application.
+UserRoutes.get('/count-users', countAllUsers)
+
 export default UserRoutes

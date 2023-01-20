@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { addProducts } from '../redux/apiCalls.redux'
+import { useDispatch } from 'react-redux'
 import axios from 'axios'
 
 const Addproducts = () => {
 	const [name, setName] = useState('')
+	const [category, setCategory] = useState('')
 	const [price, setPrice] = useState('')
 	const [star, setStar] = useState('')
 	const [description, setDescription] = useState('')
@@ -11,16 +14,56 @@ const Addproducts = () => {
 	const [error, setError] = useState(null)
 	const [success, setSuccess] = useState(null)
 
+	const dispatch = useDispatch()
+
 	const addProduct = async event => {
 		event.preventDefault()
+
+		const newUrl = {}
+		const newUrlOne = {}
+
+		//upload images.
+		if (image) {
+			const data = new FormData()
+			const fileName = Date.now() + image.name //the image name.
+			data.append('name', fileName)
+			data.append('file', image)
+			newUrl.image = fileName
+
+			try {
+				await axios.post('/api/upload', data)
+				setSuccess('Image Successfully Uploaded')
+			} catch (error) {
+				setError('Unable To Upload Image')
+			}
+		}
+
+		//upload image one.
+		if (imageOne) {
+			const dataOne = new FormData()
+			const fileNameOne = Date.now() + imageOne.name //the image name.
+			dataOne.append('name', fileNameOne)
+			dataOne.append('file', imageOne)
+			newUrlOne.imageOne = fileNameOne
+
+			try {
+				await axios.post('/api/upload', dataOne)
+				setSuccess('Image Successfully Uploaded')
+			} catch (error) {
+				setError('Unable To Upload Image')
+			}
+		}
+
+		//add the product infomation.
 		try {
-			const result = axios.post('/api/product/add', {
+			const result = addProducts(dispatch, {
 				name,
+				category,
 				price,
 				star,
 				description,
-				image,
-				imageOne,
+				image: newUrl.image,
+				imageOne: newUrlOne.imageOne,
 			})
 
 			//handle all error
@@ -28,7 +71,7 @@ const Addproducts = () => {
 				setSuccess('Product Successfully Added.')
 			}
 		} catch (error) {
-			setError('Email Already In User Pick Anotherone.')
+			setError('Error!! Product Unable To Add.')
 		}
 	}
 
@@ -42,6 +85,12 @@ const Addproducts = () => {
 							type='text'
 							required
 							placeholder='Product Name'
+						/>
+						<input
+							onChange={event => setCategory(event.target.value)}
+							type='text'
+							required
+							placeholder='Product Category'
 						/>
 						<input
 							type='text'

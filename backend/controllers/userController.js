@@ -117,3 +117,17 @@ export const getAllUsers = async (req, res) => {
 		res.status(500).send(error)
 	}
 }
+
+//function to count all the users.
+export const countAllUsers = async (req, res) => {
+	try {
+		const countUsers = await User.countDocuments()
+
+		console.log(countUsers)
+
+		//send the response to the user.
+		res.status(200).send({ count: countUsers })
+	} catch (error) {
+		res.status(500).send(error)
+	}
+}

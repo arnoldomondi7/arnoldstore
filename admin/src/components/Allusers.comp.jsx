@@ -4,12 +4,14 @@ import UserInfo from './UserInfo.comp'
 const Allusers = ({ user }) => {
 	const [open, setOpen] = useState(false)
 
+	const url = 'http://localhost:3001/'
+
 	return (
 		<div className='all-users'>
 			<div className='users-groups'>
 				<div className='user-group'>
 					<div className='user-header'>
-						<img src={`./assets/uploads/${user.image}`} alt={user.name} />
+						<img src={`${url}./assets/uploads/${user.image}`} alt={user.name} />
 					</div>
 					<div className='user-body'>
 						<h4 className='username'>{user.name}</h4>
